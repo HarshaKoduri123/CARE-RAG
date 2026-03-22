@@ -1,0 +1,12 @@
+model:
+  name: cross-encoder/ms-marco-MiniLM-L-6-v2
+  device: cuda
+
+runtime:
+  batch_size: 16
+
+search:
+  retrieve_top_k: 20
+  rerank_top_k: 5
+  max_query_chars: 3000
+  max_doc_chars: 3000

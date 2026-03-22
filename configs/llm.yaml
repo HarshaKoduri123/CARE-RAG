@@ -1,0 +1,38 @@
+reasoning:
+  max_article_chars: 1200
+  max_patient_chars: 1000
+  max_query_chars: 2500
+  max_articles: 5
+  max_similar_patients: 5
+
+prompt:
+  include_articles: true
+  include_similar_patients: true
+  include_scores: true
+  style: clinical_evidence
+
+query_builder:
+  mode: llm
+  max_query_chars: 400
+  fallback_to_raw: true
+  fallback_to_manual_override: true
+
+llm_query_builder:
+  enabled: true
+  provider: ollama
+  model: llama3.1:8b
+  base_url: http://localhost:11434
+  temperature: 0.0
+  max_tokens: 200
+  timeout_seconds: 120
+  output_format: text
+
+reasoning_llm:
+  enabled: true
+  provider: ollama
+  model: llama3.1:8b
+  base_url: http://localhost:11434
+  temperature: 0.1
+  max_tokens: 1200
+  timeout_seconds: 180
+  output_format: text

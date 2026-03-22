@@ -1,0 +1,8 @@
+pandas
+tqdm
+pyyaml
+numpy
+sentence-transformers
+faiss-cpu
+scikit-learn
+pytest

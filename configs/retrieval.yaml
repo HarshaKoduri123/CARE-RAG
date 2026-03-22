@@ -1,0 +1,30 @@
+model:
+  name: sentence-transformers/all-MiniLM-L6-v2
+  device: cuda
+  normalize: true
+
+paths:
+  embeddings_dir: outputs/embeddings
+  index_dir: data/indexes
+  processed_dir: data/processed
+
+search:
+  top_k: 5
+  max_query_chars: 3000
+
+corpora:
+  patients:
+    ids_file: patient_ids.json
+    embeddings_file: patient_embeddings.npy
+    index_file: patient_faiss.index
+    source_file: patients.jsonl
+    id_field: patient_uid
+    text_field: patient_text
+
+  articles:
+    ids_file: article_ids.json
+    embeddings_file: article_embeddings.npy
+    index_file: article_faiss.index
+    source_file: articles.jsonl
+    id_field: pmid
+    text_field: abstract

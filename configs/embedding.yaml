@@ -1,0 +1,15 @@
+model:
+  name: sentence-transformers/all-MiniLM-L6-v2
+  device: cuda
+  normalize: true
+
+data:
+  corpus: articles
+  max_chars: 3000
+  limit: null
+
+runtime:
+  batch_size: 64
+
+output:
+  dir: outputs/embeddings
